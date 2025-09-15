@@ -8,11 +8,9 @@ Let $f(n)$ denote the minimal $m \geq 1$ such that
 $$n! = a_1 \cdot a_2 \cdots a_t$$
 with $a_1 < a_2 < \cdots < a_t = a_1 + m$. What is the behaviour of $f(n)$?
 
-For example, $f(4) = 2$ because $4! = 4 \cdot 6 = 4 + 2$ so $m = 2$. No other $m$ can be smaller, whatever factors you choose. Our job is to characterize $f(n)$ but the problem is still unsolved.
+For example, $f(4) = 2$ because $4! = 4 \cdot 6 = 4 + 2$ so $m = 2$. No other $m$ can be smaller, whatever factors you choose. Our job is to characterize $f(n)$ but the problem is still unsolved. Terence Tao created a [GitHub repository](https://github.com/teorth/erdosproblems) to try and link up Erdos problems to the [OEIS](https://oeis.org/).
 
-Terence Tao created a [GitHub repository](https://github.com/teorth/erdosproblems) to try and link up Erdos problems to the [OEIS](https://oeis.org/).
-
-Through brute-forcing, I found
+Through brute forcing I found:
 
 <div style="display:flex; justify-content: center;">
     <table>
@@ -58,19 +56,19 @@ Through brute-forcing, I found
     </table>
 </div>
 
-which is a new sequence not found in OEIS. $f(12)$ would have taken 175 days so I stopped. My code is available [here](https://github.com/swrlly/erdos393) with corresponding logging, test cases, and more examples in [`logs-bruteforce`](https://github.com/swrlly/erdos393/tree/main/logs-bruteforce).
+which is a new sequence not found in OEIS. $f(12)$ would have taken 175 days so I stopped. Code is available [here](https://github.com/swrlly/erdos393) with corresponding logging, test cases, and more examples in [`logs-bruteforce`](https://github.com/swrlly/erdos393/tree/main/logs-bruteforce).
 
 ### Brute force approach
 
-Because we're trying to find $a_1 \cdots a_t = n!$, we can think of the prime factorization of $n!$ as moving each prime factor into one of the slots $a_i$ such that $m$ is minimized. This implies if we find all multiset partitions of the prime factorization of $n$, check their product against $n!$, and find the smallest distance (the $m$) between $a_1$ and $a_t$, then we have found the solution $f(n)$. This is what my brute force approach did; I used [generators](https://github.com/swrlly/erdos393/blob/31c0bd979919ff06c69f98909e2968ec0bccc3c8/generate_partitions.py#L77) to ensure we could generate multiset partitions of the prime factorization of $n!$ on the fly (my computer crashed without generators on $f(10)$).
+Because we're trying to find $a_1 \cdots a_t = n!$, we can think of the prime factorization of $n!$ as moving each prime factor into one of the slots $a_i$ such that $m$ is minimized. This implies if we find all multiset partitions of the prime factorization of $n!$, check their product against $n!$, and find the smallest distance (the $m$) between $a_1$ and $a_t$, then we have found the solution $f(n)$. This is what my brute force approach did; I used [generators](https://github.com/swrlly/erdos393/blob/31c0bd979919ff06c69f98909e2968ec0bccc3c8/generate_partitions.py#L77) to ensure we could generate multiset partitions of the prime factorization of $n!$ on the fly (my computer crashed without generators on $f(10)$).
 
-I also found another interesting approach to generating more values of $f(n)$. Would like some feedback on this if it's reasonable for generating correct $f(n)$'s.
+I also found another interesting approach to generating more values of $f(n)$.
 
 ### Geometric mean approach
 
 The brute force approach is looking at too many possible partitions. For example, $6! = 2 \cdot 12 \cdot 30$ is already out of the question because the naive lower bound is $n - 2 = 6 - 2$ from $6! = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2$. To reduce the number of partitions checked, consider  $12 \cdot 14 \cdot 15 \cdot 16 = 8!$. We're multiplying four numbers, and the geometric mean is $\sqrt[4]{12 \cdot 14 \cdot 15 \cdot 16} = \sqrt[4]{8!}$. This means if we check all $\sqrt[k]{n!}$, and search around a window of $\sqrt[k]{n!}$, then we're likely to find a result. Some evidence towards this is finding the minimum $m$ is trying to reduce the distance between the min $a_1$ and the max $a_t$ which is like minimizing the variance of the factors, clustering them around the geometric mean. I interpret this as maximizing the probability of finding a match.
 
-This method also gives us a way to check all possible $k$-factorizations where $2 \leq k \leq n$ of $n!$. I went about this by defining a window $\sqrt[k]{n!} \pm n$ and choosing all possible combinations of $k$ factors from this window and checking if they multiplied to $n!$. Code is [here](https://github.com/swrlly/erdos393/blob/main/geometric_mean_heuristic.py).
+This method also gives us a way to check all possible $k$-factorizations of $n!$ where $2 \leq k \leq n$. I went about this by defining a window $\sqrt[k]{n!} \pm n$ and choosing all possible combinations of $k$ factors from this window and checking if they multiplied to $n!$. Code is [here](https://github.com/swrlly/erdos393/blob/main/geometric_mean_heuristic.py).
 
 This method agreed with the brute force method (found same factorizations and $m$'s) and was able to generate up to $f(19)$ in less than a day:
 
@@ -112,8 +110,9 @@ This method agreed with the brute force method (found same factorizations and $m
     </table>
 </div>
 
-These examples are not unique; there's more examples in [`logs-geometric-mean`](https://github.com/swrlly/erdos393/tree/main/logs-geometric-mean).
+These examples are not unique; there's more examples in [`logs-geometric-mean`](https://github.com/swrlly/erdos393/tree/main/logs-geometric-mean). Keys in the `json` files are $m$'s, with corresponding examples.
+
 
 # Caveats?
 
-I didn't consider negative factors. But I did use the geometric mean approach with windows going to negative values and didn't see any negative factors showing up for minimal $m$. Also, if there were possible negative $a_i$'s, then I believe they should only happen when there's an even number of $a_i$'s corresponding to the lowest $m$, since they'd all be negative with the same $m$. If that is true then is is sufficient to consider only positive factorizations.
+I didn't consider negative factors in bruteforcing. But I did use the geometric mean approach with windows going to negative values and didn't see any negative factors showing up for minimal $m$. Also, if there were possible negative $a_i$'s, then I believe they should only happen when there's an even number of $a_i$'s corresponding to the lowest $m$, since they'd all be negative with the same $m$. If one $a_i$ was negative, then (I believe) it would be better to choose the positive version instead, because it'd be closer to the geometric mean. If that is true then is is sufficient to consider only positive factorizations.
