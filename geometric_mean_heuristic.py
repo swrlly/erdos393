@@ -9,9 +9,15 @@ from logger import create_logger
 
 def geometric_mean_heuristic(n):
     """
-    Searches for likely factors of `n` using a window around `k`th root of `n`.
-    Chooses k numbers 
+    Searches for likely factors of `n` using a window around `k`th root of `n`, 2 <= k <= n.
+    Chooses all possibilities of k numbers in that window, multiplies them and compares to n!.
     Established minimum lower bound is n - 2, which comes from n! = n x (n-1) x ... x 3 x 2
+
+    Args:
+        n: the n to check
+
+    Returns:
+        dict(list(list)): dictionary with keys `m`, and values list of lists of factors corresponding to that m
     """
     
     data = {}
@@ -20,7 +26,7 @@ def geometric_mean_heuristic(n):
     best_m = float("inf")
     best_factors = None
 
-    # choose all potential k-tuples within a window near kth root of n, k < n
+    # choose all potential k-tuples within a window near kth root of n, k <= n
     # start from largest number of factors, empirically speaking I saw many more results with a large number of factors
     for k in range(n, 1, -1):
 
@@ -38,7 +44,7 @@ def geometric_mean_heuristic(n):
         logger.info(f"Sampling {k} numbers between [{window[0]}, {window[-1]}]. Total possibilities: {total_possibilities}")
         
         i = 0
-        # now choose all potential k-tuples within a window near kth root of n, k < n
+        # now choose all potential k-tuples within a window near kth root of n, k <= n
         for factors in combinations(window, k):
 
             # minimum naive lower bound for m is n - 2, throw away now if fails

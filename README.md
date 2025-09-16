@@ -10,6 +10,24 @@ with $a_1 < a_2 < \cdots < a_t = a_1 + m$. What is the behaviour of $f(n)$?
 
 For example, $f(4) = 2$ because $4! = 4 \cdot 6 = 4 + 2$ so $m = 2$. No other $m$ can be smaller, whatever factors you choose. Our job is to characterize $f(n)$ but the problem is still unsolved. Terence Tao created a [GitHub repository](https://github.com/teorth/erdosproblems) to try and link up Erdos problems to the [OEIS](https://oeis.org/).
 
+# Usage
+
+- `python brute_force_checker.py` to run the brute force checker, unfeasable after $f(12)$
+- `python geometric_mean_heuristic.py` to run a geometric mean based heuristic for finding $f(n)$
+- `generate_partitions.py` contain functions to generate multiset partitions
+- `python test_generate_partitions.py` to run tests on `generate_partitions.py`. The tests including
+    - Testing in-memory multiset partition creator (`partition_list`) on 5, 9, and 12 elements by comparing to the corresponding [Bell number](https://en.wikipedia.org/wiki/Bell_number)
+    - Testing multiset partition generator (`partition_list_generator`) on 5, 9, and 12 elements in the same fashion
+    - Comparing the partitions created by `partition_list` and `partition_list_generator` one by one on 12 elements to ensure the functions generate the same partitions
+
+The `logs` folders contain a log of running `brute_force_checker.py` and `geometric_mean_heuristic.py`. `data` folders contain the results. Name of the `json` file corresponds to the results on $n$. Keys of the dictionaries are $m$, and values are factors of $n!$ corresponding to that $m$. In `logs-bruteforce/data`, the structure is a bit different, for example in `6.json` we have `{"2": {"[8, 9, 10]": 4}, "4": {"[2, 3, 4, 5, 6]": 24}}`. 
+
+We found a best $m$ of $2$, corresponding to the factors $8\cdot9\cdot10$, and 4 means the total number of times we saw this result while brute forcing.
+
+### Brute force approach
+
+Because we're trying to find $a_1 \cdots a_t = n!$, we can find all possible $a_1\cdots a_t$ by moving each prime factor in the prime factorization of $n!$ into one of the slots $a_i$ such that $m$ is minimized. This implies if we find all multiset partitions of the prime factorization of $n!$, and find the smallest distance (the $m$) between $a_1$ and $a_t$, then we have found the solution $f(n)$. This is what my brute force approach did; I used [generators](https://github.com/swrlly/erdos393/blob/31c0bd979919ff06c69f98909e2968ec0bccc3c8/generate_partitions.py#L77) to ensure we could generate multiset partitions of the prime factorization of $n!$ on the fly (my computer crashed without generators on $f(10)$).
+
 Through brute forcing I found:
 
 <div style="display:flex; justify-content: center;">
@@ -57,10 +75,6 @@ Through brute forcing I found:
 </div>
 
 which is a new sequence not found in OEIS. $f(12)$ would have taken 175 days so I stopped. Code is available [here](https://github.com/swrlly/erdos393) with corresponding logging, test cases, and more examples in [`logs-bruteforce`](https://github.com/swrlly/erdos393/tree/main/logs-bruteforce).
-
-### Brute force approach
-
-Because we're trying to find $a_1 \cdots a_t = n!$, we can think of the prime factorization of $n!$ as moving each prime factor into one of the slots $a_i$ such that $m$ is minimized. This implies if we find all multiset partitions of the prime factorization of $n!$, check their product against $n!$, and find the smallest distance (the $m$) between $a_1$ and $a_t$, then we have found the solution $f(n)$. This is what my brute force approach did; I used [generators](https://github.com/swrlly/erdos393/blob/31c0bd979919ff06c69f98909e2968ec0bccc3c8/generate_partitions.py#L77) to ensure we could generate multiset partitions of the prime factorization of $n!$ on the fly (my computer crashed without generators on $f(10)$).
 
 I also found another interesting approach to generating more values of $f(n)$.
 
@@ -116,3 +130,5 @@ These examples are not unique; there's more examples in [`logs-geometric-mean`](
 # Caveats?
 
 I didn't consider negative factors in bruteforcing. But I did use the geometric mean approach with windows going to negative values and didn't see any negative factors showing up for minimal $m$. Also, if there were possible negative $a_i$'s, then I believe they should only happen when there's an even number of $a_i$'s corresponding to the lowest $m$, since they'd all be negative with the same $m$. If one $a_i$ was negative, then (I believe) it would be better to choose the positive version instead, because it'd be closer to the geometric mean. If that is true then is is sufficient to consider only positive factorizations.
+
+Terence provided solid [reasoning](https://github.com/teorth/erdosproblems/issues/92#issuecomment-3293076473) on why negative numbers do not need to be considered.
