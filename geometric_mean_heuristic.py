@@ -96,7 +96,6 @@ if __name__ == "__main__":
             logger.info(f"Starting search for n = {n}.")
             results = geometric_mean_heuristic(n)
             # now save results
-            # forgot to save in data directory
             with open(f"{log_dir}/data/{n}.json", "w") as f:
                 json.dump(results, f, sort_keys = True)
         except KeyboardInterrupt:

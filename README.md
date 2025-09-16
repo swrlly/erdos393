@@ -8,7 +8,7 @@ Let $f(n)$ denote the minimal $m \geq 1$ such that
 $$n! = a_1 \cdot a_2 \cdots a_t$$
 with $a_1 < a_2 < \cdots < a_t = a_1 + m$. What is the behaviour of $f(n)$?
 
-For example, $f(4) = 2$ because $4! = 4 \cdot 6 = 4 + 2$ so $m = 2$. No other $m$ can be smaller, whatever factors you choose. Our job is to characterize $f(n)$ but the problem is still unsolved. Terence Tao created a [GitHub repository](https://github.com/teorth/erdosproblems) to try and link up Erdos problems to the [OEIS](https://oeis.org/).
+For example, $f(4) = 2$ because $4! = 4 \cdot 6$ where $6 = 4 + 2$ so $m = 2$. No other $m$ can be smaller, whatever factors you choose. Our job is to characterize $f(n)$ but the problem is still unsolved. Terence Tao created a [GitHub repository](https://github.com/teorth/erdosproblems) to try and link up Erdos problems to the [OEIS](https://oeis.org/).
 
 # Usage
 
