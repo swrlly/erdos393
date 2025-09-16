@@ -90,7 +90,7 @@ if __name__ == "__main__":
         os.makedirs(log_dir + "/data")
 
     # check between 4 - 49
-    for n in range(4, 50):
+    for n in range(21, 50):
         try:
             logger.info("\n" + "="*50)
             logger.info(f"Starting search for n = {n}.")

@@ -12,9 +12,9 @@ For example, $f(4) = 2$ because $4! = 4 \cdot 6$ where $6 = 4 + 2$ so $m = 2$. N
 
 # Usage
 
-- `python brute_force_checker.py` to run the brute force checker, unfeasable after $f(12)$
+- `python bruter_simple.py` to run the brute force checker (updated using `sympy`!)
 - `python geometric_mean_heuristic.py` to run a geometric mean based heuristic for finding $f(n)$
-- `generate_partitions.py` contain functions to generate multiset partitions
+- `generate_partitions.py` (depreciated) contains functions to generate multiset partitions 
 - `python test_generate_partitions.py` to run tests on `generate_partitions.py`. The tests including
     - Testing in-memory multiset partition creator (`partition_list`) on 5, 9, and 12 elements by comparing to the corresponding [Bell number](https://en.wikipedia.org/wiki/Bell_number)
     - Testing multiset partition generator (`partition_list_generator`) on 5, 9, and 12 elements in the same fashion
