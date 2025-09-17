@@ -40,6 +40,7 @@ Through brute forcing I found:
         <td>11 </td>
         <td>12 </td>
         <td>13 </td>
+        <td>14 </td>
     </tr>
     <tr>
         <th>$f(n)$ </th>
@@ -132,5 +133,6 @@ I think the geometric mean method can be significantly sped up by finding a math
 The logs show many such cases. If there exists a number-theoretic bound for how much $a_1, \dots, a_t$ may vary whilst near the geometric mean and minimizing $m$, this bound can significantly speed up the geometric mean method. The window cannot be too small otherwise potential results can be missed. This happened to me when I used other window sizes such as $\pm 6\log_8(\sqrt[k]{n!})$ where results on $n\geq21$ were completely missed.
 
 # Caveats?
+
 
 I didn't consider negative factors in bruteforcing. But Terence provided solid [reasoning](https://github.com/teorth/erdosproblems/issues/92#issuecomment-3293076473) on why negative numbers do not need to be considered. His reasoning is for $a_1 < 0$ and $a_t > 0$. In the case where $a_1 < 0$ and $a_t < 0$, these cases are accounted for by looking at positive factorizations with an even number of factors. So it is sufficient to consider only positive integers.
