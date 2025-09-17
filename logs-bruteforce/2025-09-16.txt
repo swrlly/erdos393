@@ -1,0 +1,143 @@
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=3
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n = 3
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n! = 6
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Prime factors of 3!: [2, 3]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Total prime factors: 2
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 1, Factors = [2, 3]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Result: f(3) = 1
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Factors: [2, 3]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - from the partition: [[2], [3]]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=4
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n = 4
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n! = 24
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Prime factors of 4!: [2, 2, 2, 3]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Total prime factors: 4
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 2, Factors = [4, 6]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Result: f(4) = 2
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Factors: [4, 6]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - from the partition: [[2, 2], [2, 3]]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=5
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n = 5
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n! = 120
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Prime factors of 5!: [2, 2, 2, 3, 5]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Total prime factors: 5
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 2, Factors = [10, 12]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Result: f(5) = 2
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Factors: [10, 12]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - from the partition: [[2, 2, 3], [2, 5]]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=6
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n = 6
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n! = 720
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Prime factors of 6!: [2, 2, 2, 2, 3, 3, 5]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Total prime factors: 7
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 2, Factors = [8, 9, 10]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Result: f(6) = 2
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Factors: [8, 9, 10]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - from the partition: [[2, 2, 2], [2, 5], [3, 3]]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=7
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n = 7
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n! = 5040
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Prime factors of 7!: [2, 2, 2, 2, 3, 3, 5, 7]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Total prime factors: 8
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 2, Factors = [70, 72]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Result: f(7) = 2
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Factors: [70, 72]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - from the partition: [[2, 2, 2, 3, 3], [2, 5, 7]]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=8
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n = 8
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n! = 40320
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Prime factors of 8!: [2, 2, 2, 2, 2, 2, 2, 3, 3, 5, 7]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Total prime factors: 11
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 4, Factors = [32, 35, 36]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Result: f(8) = 4
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Factors: [32, 35, 36]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - from the partition: [[2, 2, 2, 2, 2], [2, 2, 3, 3], [5, 7]]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=9
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n = 9
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n! = 362880
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Prime factors of 9!: [2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 5, 7]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Total prime factors: 13
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 7, Factors = [9, 12, 14, 15, 16]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 6, Factors = [6, 7, 8, 9, 10, 12]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Result: f(9) = 6
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Factors: [6, 7, 8, 9, 10, 12]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - from the partition: [[2, 2, 2], [2, 2, 3], [2, 3], [2, 5], [3, 3], [7]]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=10
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n = 10
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - n! = 3628800
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Prime factors of 10!: [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 5, 5, 7]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - Total prime factors: 15
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 8, Factors = [40, 42, 45, 48]
+[2025-09-16] 16:32:54 -  INFO   - brute_force_checker - New best: m = 7, Factors = [9, 10, 12, 14, 15, 16]
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - Result: f(10) = 7
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - Factors: [9, 10, 12, 14, 15, 16]
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - from the partition: [[2, 2, 2, 2], [2, 2, 3], [2, 5], [2, 7], [3, 3], [3, 5]]
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=11
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - n = 11
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - n! = 39916800
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - Prime factors of 11!: [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 5, 5, 7, 11]
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - Total prime factors: 16
+[2025-09-16] 16:32:55 -  INFO   - brute_force_checker - New best: m = 6, Factors = [30, 32, 33, 35, 36]
+[2025-09-16] 16:32:57 -  INFO   - brute_force_checker - Result: f(11) = 6
+[2025-09-16] 16:32:57 -  INFO   - brute_force_checker - Factors: [30, 32, 33, 35, 36]
+[2025-09-16] 16:32:57 -  INFO   - brute_force_checker - from the partition: [[2, 2, 2, 2, 2], [2, 2, 3, 3], [2, 3, 5], [3, 11], [5, 7]]
+[2025-09-16] 16:32:57 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:32:57 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=12
+[2025-09-16] 16:32:57 -  INFO   - brute_force_checker - n = 12
+[2025-09-16] 16:32:57 -  INFO   - brute_force_checker - n! = 479001600
+[2025-09-16] 16:32:57 -  INFO   - brute_force_checker - Prime factors of 12!: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 5, 5, 7, 11]
+[2025-09-16] 16:32:57 -  INFO   - brute_force_checker - Total prime factors: 19
+[2025-09-16] 16:33:02 -  INFO   - brute_force_checker - New best: m = 9, Factors = [24, 25, 27, 28, 32, 33]
+[2025-09-16] 16:33:15 -  INFO   - brute_force_checker - Result: f(12) = 9
+[2025-09-16] 16:33:15 -  INFO   - brute_force_checker - Factors: [24, 25, 27, 28, 32, 33]
+[2025-09-16] 16:33:15 -  INFO   - brute_force_checker - from the partition: [[2, 2, 2, 2, 2], [2, 2, 2, 3], [2, 2, 7], [3, 3, 3], [3, 11], [5, 5]]
+[2025-09-16] 16:33:15 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:33:15 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=13
+[2025-09-16] 16:33:15 -  INFO   - brute_force_checker - n = 13
+[2025-09-16] 16:33:15 -  INFO   - brute_force_checker - n! = 6227020800
+[2025-09-16] 16:33:15 -  INFO   - brute_force_checker - Prime factors of 13!: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 5, 5, 7, 11, 13]
+[2025-09-16] 16:33:15 -  INFO   - brute_force_checker - Total prime factors: 20
+[2025-09-16] 16:33:46 -  INFO   - brute_force_checker - New best: m = 11, Factors = [21, 22, 24, 25, 26, 27, 32]
+[2025-09-16] 16:34:02 -  INFO   - brute_force_checker - New best: m = 9, Factors = [39, 40, 42, 44, 45, 48]
+[2025-09-16] 16:35:30 -  INFO   - brute_force_checker - Result: f(13) = 9
+[2025-09-16] 16:35:30 -  INFO   - brute_force_checker - Factors: [39, 40, 42, 44, 45, 48]
+[2025-09-16] 16:35:30 -  INFO   - brute_force_checker - from the partition: [[2, 2, 2, 2, 3], [2, 2, 2, 5], [2, 2, 11], [2, 3, 7], [3, 3, 5], [3, 13]]
+[2025-09-16] 16:35:30 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:35:30 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=14
+[2025-09-16] 16:35:30 -  INFO   - brute_force_checker - n = 14
+[2025-09-16] 16:35:30 -  INFO   - brute_force_checker - n! = 87178291200
+[2025-09-16] 16:35:30 -  INFO   - brute_force_checker - Prime factors of 14!: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 5, 5, 7, 7, 11, 13]
+[2025-09-16] 16:35:30 -  INFO   - brute_force_checker - Total prime factors: 22
+[2025-09-16] 16:37:38 -  INFO   - brute_force_checker - New best: m = 9, Factors = [63, 64, 65, 66, 70, 72]
+[2025-09-16] 16:52:44 -  INFO   - brute_force_checker - Result: f(14) = 9
+[2025-09-16] 16:52:44 -  INFO   - brute_force_checker - Factors: [63, 64, 65, 66, 70, 72]
+[2025-09-16] 16:52:44 -  INFO   - brute_force_checker - from the partition: [[2, 2, 2, 2, 2, 2], [2, 2, 2, 3, 3], [2, 3, 11], [2, 5, 7], [3, 3, 7], [5, 13]]
+[2025-09-16] 16:52:44 -  INFO   - brute_force_checker - 
+==================================================
+[2025-09-16] 16:52:44 -  INFO   - brute_force_checker - Brute forcing Erdos #393 on n=15
+[2025-09-16] 16:52:44 -  INFO   - brute_force_checker - n = 15
+[2025-09-16] 16:52:44 -  INFO   - brute_force_checker - n! = 1307674368000
+[2025-09-16] 16:52:44 -  INFO   - brute_force_checker - Prime factors of 15!: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 5, 5, 5, 7, 7, 11, 13]
+[2025-09-16] 16:52:44 -  INFO   - brute_force_checker - Total prime factors: 24
+[2025-09-16] 16:59:17 -  INFO   - brute_force_checker - User stopped execution.
