@@ -1,6 +1,6 @@
-﻿# erdos393
+﻿# erdős393
 
-Brute force checker for [Erdos problem #393](https://www.erdosproblems.com/393).
+Brute force checker/geometric mean heuristic for [Thomas Bloom's](http://www.thomasbloom.org/index.html) [Erdős problem #393](https://www.erdosproblems.com/393).
 
 The problem says:
 
@@ -8,7 +8,7 @@ Let $f(n)$ denote the minimal $m \geq 1$ such that
 $$n! = a_1 \cdot a_2 \cdots a_t$$
 with $a_1 < a_2 < \cdots < a_t = a_1 + m$. What is the behaviour of $f(n)$?
 
-For example, $f(4) = 2$ because $4! = 4 \cdot 6$ where $6 = 4 + 2$ so $m = 2$. No other $m$ can be smaller, whatever factors you choose. Our job is to characterize $f(n)$ but the problem is still unsolved. Terence Tao created a [GitHub repository](https://github.com/teorth/erdosproblems) to try and link up Erdos problems to the [OEIS](https://oeis.org/).
+For example, $f(4) = 2$ because $4! = 4 \cdot 6$ where $6 = 4 + 2$ so $m = 2$. No other $m$ can be smaller, whatever factors you choose. Our job is to characterize $f(n)$ but the problem is still unsolved. I came across this problem from Terence Tao's [GitHub repository](https://github.com/teorth/erdosproblems) which tries to link up Thomas's Erdős problems to the [OEIS](https://oeis.org/); relevant discussion in this [issue](https://github.com/teorth/erdosproblems/issues/92).
 
 # Usage
 
@@ -41,6 +41,7 @@ Through brute forcing I found:
         <td>12 </td>
         <td>13 </td>
         <td>14 </td>
+        <td>15 </td>
     </tr>
     <tr>
         <th>$f(n)$ </th>
@@ -57,6 +58,7 @@ Through brute forcing I found:
         <td>9 </td>
         <td>9 </td>
         <td>9 </td>
+        <td>12 </td>
     </tr>
     <tr>
         <th>Example </th>
@@ -73,11 +75,12 @@ Through brute forcing I found:
         <td><div style="width:46px">24,25,27,28,32,33</div></td>
         <td><div style="width:46px">39,40,42,44,45,48</div></td>
         <td><div style="width:46px">63,64,65,66,70,72</div></td>
+        <td><div style="width:50px">6,18,20,21,22,25,26,27,28</div></td>
     </tr>
     </table>
 </div>
 
-which is a new sequence not found in OEIS. More examples in [`logs-bruteforce`](https://github.com/swrlly/erdos393/tree/main/logs-bruteforce).
+which has been submitted to the OEIS. More examples in [`logs-bruteforce`](https://github.com/swrlly/erdos393/tree/main/logs-bruteforce).
 
 I also found another interesting approach to generating more values of $f(n)$.
 
@@ -93,7 +96,6 @@ This method agreed with the brute force method (found same factorizations and $m
     <table>
     <tr>
         <th>$n$</th>
-        <td>15 </td>
         <td>16 </td>
         <td>17 </td>
         <td>18 </td>
@@ -101,7 +103,6 @@ This method agreed with the brute force method (found same factorizations and $m
     </tr>
     <tr>
         <th>$f(n)$ </th>
-        <td>12 </td>
         <td>14 </td>
         <td>12 </td>
         <td>15 </td>
@@ -109,7 +110,6 @@ This method agreed with the brute force method (found same factorizations and $m
     </tr>
     <tr>
         <th>Example </th>
-        <td><div style="width:55px">6,18,20,21,22, 25,26, 27,28</div></td>
         <td><div style="width:42px">14,16,18,20,22,24,25,26,27,28</div> </td>
         <td><div style="width:45px">60,63,64,65,66,68,70,72</div></td>
         <td><div style="width:50px">21,22,24,25,26,27,28,30,32,34,36</div></td>
@@ -126,13 +126,16 @@ These examples are not unique; more examples in [`logs-geometric-mean`](https://
 The brute force method creates all partitions of a set, which grows exponentially with respect to the Bell numbers. Any improvement here would need to optimize `partition_list_generator` or use a faster programming language than Python. Generators should be used when $n \geq 10$, while calculating $f(10)$ with the in-memory partition creator my computer paged at least 30 GB of saved partitions to the hard disk before crashing.
 
 ## Geometric mean
-I think the geometric mean method can be significantly sped up by finding a mathematical bound on the window size. The window used was $\left[\max(\sqrt[k]{n!} - n, 2), \sqrt[k]{n!} + n\right]$ Based on empirical data, the current windows seem to be too wide. For example, from the logs we see:
+I think the geometric mean method can be significantly sped up by finding a mathematical bound on the window size while still guaranteeing $m$ can be found. The window used was $\left[\max(\sqrt[k]{n!} - n, 2), \sqrt[k]{n!} + n\right]$ Based on empirical data, the current windows seem to be too wide. For example, from the logs we see:
 - For $n = 19$, best $m$ was found when $k = 15$. We have $\sqrt[15]{19!}\approx 13$ with window $\[2, 32\]$. But the minimum factor $a_1 = 6$ while the max $a_t = 22$. There's a wide space between $a_1, a_t$ and the edge of the window.
 - For $n = 17$, best $m$ found when $k=8$. We have $\sqrt[8]{17!} \approx 65$ with window $\[48, 82\]$. But again, $a_1 = 60, a_t = 72$, far from the edge of the window. 
 
 The logs show many such cases. If there exists a number-theoretic bound for how much $a_1, \dots, a_t$ may vary whilst near the geometric mean and minimizing $m$, this bound can significantly speed up the geometric mean method. The window cannot be too small otherwise potential results can be missed. This happened to me when I used other window sizes such as $\pm 6\log_8(\sqrt[k]{n!})$ where results on $n\geq21$ were completely missed.
 
-# Caveats?
+## Use a Better Approach
 
+These approaches are definitely not optimal. Too many multiset partitions/no guarantee for window width for geometric mean. Other approaches are significantly better; [Boris Alexeev](https://github.com/teorth/erdosproblems/issues/92#issuecomment-3299469526) solves a polynomial over the integers, while Andrew Howroyd on OEIS looked at divisors of $n!$. Maybe you will find a more efficient approach :)
+
+# Caveats?
 
 I didn't consider negative factors in bruteforcing. But Terence provided solid [reasoning](https://github.com/teorth/erdosproblems/issues/92#issuecomment-3293076473) on why negative numbers do not need to be considered. His reasoning is for $a_1 < 0$ and $a_t > 0$. In the case where $a_1 < 0$ and $a_t < 0$, these cases are accounted for by looking at positive factorizations with an even number of factors. So it is sufficient to consider only positive integers.
