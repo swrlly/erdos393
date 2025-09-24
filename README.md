@@ -1,6 +1,6 @@
 ﻿# erdős393
 
-Brute force checker/geometric mean heuristic for [Thomas Bloom's](http://www.thomasbloom.org/index.html) [Erdős problem #393](https://www.erdosproblems.com/393).
+Brute force checker/geometric mean heuristic for [Thomas Bloom's](http://www.thomasbloom.org/index.html) [Erdős problem #393](https://www.erdosproblems.com/393), OEIS Sequence [A388302](https://oeis.org/A388302).
 
 The problem says:
 
@@ -80,7 +80,7 @@ Through brute forcing I found:
     </table>
 </div>
 
-which has been submitted to the OEIS. More examples in [`logs-bruteforce`](https://github.com/swrlly/erdos393/tree/main/logs-bruteforce).
+which was submitted to OEIS (sequence [A388302](https://oeis.org/A388302)). More examples in [`logs-bruteforce`](https://github.com/swrlly/erdos393/tree/main/logs-bruteforce).
 
 I also found another interesting approach to generating more values of $f(n)$.
 
@@ -134,7 +134,7 @@ The logs show many such cases. If there exists a number-theoretic bound for how 
 
 ## Use a Better Approach
 
-These approaches are definitely not optimal. Too many multiset partitions/no guarantee for window width for geometric mean. Other approaches are significantly better; [Boris Alexeev](https://github.com/teorth/erdosproblems/issues/92#issuecomment-3299469526) solves a polynomial over the integers, while Andrew Howroyd on OEIS looked at divisors of $n!$. Maybe you will find a more efficient approach :)
+These approaches are definitely not optimal. Too many multiset partitions/no guarantee for window width for geometric mean. Other approaches are significantly better; [Boris Alexeev](https://github.com/teorth/erdosproblems/issues/92#issuecomment-3299469526) solves a polynomial over the integers, Andrew Howroyd on OEIS looked at divisors of $n!$, and David Corneth used both divisors and geometric mean ideas. Maybe you will find a more efficient approach :)
 
 # Caveats?
 
